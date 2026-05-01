@@ -20,8 +20,11 @@ export default defineNuxtConfig({
   security: {
     strict: true,
     headers: {
+      crossOriginEmbedderPolicy: false,
       contentSecurityPolicy: {
         "img-src": ["'self'", "data:", "https:"],
+        "style-src": ["'self'", "'unsafe-inline'", "'nonce-{{nonce}}'"],
+        "script-src-attr": ["'unsafe-inline'"],
       },
     },
 
